@@ -2,8 +2,14 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/centit-ip/centit-ip.iml" filepath="$PROJECT_DIR$/centit-ip/centit-ip.iml" />
+      <module fileurl="file://$PROJECT_DIR$/framework-base-view-easyui/framework-base-view-easyui.iml" filepath="$PROJECT_DIR$/framework-base-view-easyui/framework-base-view-easyui.iml" />
+      <module fileurl="file://$PROJECT_DIR$/framework-core/framework-core.iml" filepath="$PROJECT_DIR$/framework-core/framework-core.iml" />
       <module fileurl="file://$PROJECT_DIR$/framework-hibernate/framework-hibernate.iml" filepath="$PROJECT_DIR$/framework-hibernate/framework-hibernate.iml" />
       <module fileurl="file://$PROJECT_DIR$/framework-parent.iml" filepath="$PROJECT_DIR$/framework-parent.iml" />
+      <module fileurl="file://$PROJECT_DIR$/framework-staticsystem/framework-staticsystem.iml" filepath="$PROJECT_DIR$/framework-staticsystem/framework-staticsystem.iml" />
+      <module fileurl="file://$PROJECT_DIR$/framework-sys-view-easyui/framework-sys-view-easyui.iml" filepath="$PROJECT_DIR$/framework-sys-view-easyui/framework-sys-view-easyui.iml" />
+      <module fileurl="file://$PROJECT_DIR$/framework-system/framework-system.iml" filepath="$PROJECT_DIR$/framework-system/framework-system.iml" />
     </modules>
   </component>
 </project>
