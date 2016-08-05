@@ -1,0 +1,35 @@
+#main_header {
+	height: 100px;
+}
+
+/*菜单*/
+.menu-container {
+	width: 202px;
+}
+.menu-container a {
+	text-decoration: none;
+	color: #000;
+}
+.menu-search-panel {
+	padding: 10px;
+}
+#menu_search {
+	width: 140px;
+}
+.menu-container .tree-node.found > .tree-title, .menu-container .tree-node.found > .tree-title a {
+	color: #FC5656;
+}
+
+/*内容*/
+.menu-iframe {
+	width: 100%; height: 100%;
+	border: none;
+	margin: 0; 
+	margin-top: -3px\9;
+}
+
+#main_footer {
+	height: 30px; line-height: 28px;
+	text-align: center;
+	background: #E0ECFF;
+}

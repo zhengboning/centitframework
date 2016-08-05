@@ -1,0 +1,61 @@
+/*HEADER*/
+body > .layout-panel-north {
+	overflow: visible;
+}
+#header {
+	overflow: visible;
+    height: 71px;
+    border: none;
+    background: url(images/header.jpg) repeat-x;
+}
+
+#header .title{
+	position: absolute;
+	top:12px;
+	left:30px;
+	
+	width:346px;
+	height:50px;
+	background: url(images/header-title.png) no-repeat;
+	}
+
+/*HEADER > 工具栏*/
+#header .toolbar {
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding-top: 4px;
+    background: url(images/menu-level-1.png) no-repeat -168px 0;
+}
+#header .toolbar .easyui-linkbutton {
+	width: 36px; height: 22px;
+	padding: 0;
+	border-radius: 0;
+	border: none;
+	color: #fff;
+}
+#header .toolbar .easyui-linkbutton:last-child {
+}
+#header .toolbar .l-btn-icon {
+	position: static;
+	margin-top: 2px;
+}
+#header .toolbar .l-btn-text {
+	display: none;
+}
+#header .toolbar .panel-body{
+    padding: 0;
+    background: transparent;
+}
+#btn_exit_fullscreen, #btn_fullscreen {
+}
+#btn_modifypassword, #btn_logout {
+}
+#btn_modifypassword:hover {
+}
+#btn_logout:hover {
+}
+
+/*HEADER > 工具栏 > SKIN*/
+#toolbar_skin .skin {
+}

@@ -1,0 +1,26 @@
+<div id="main_header" data-options="region:'north'"></div>
+
+<div id="menu_container" title="主菜单" class="menu-container" data-options="region:'west'"></div>
+
+<div data-options="region:'center'">
+    <div id="menu_tab" class="easyui-tabs" data-options="fit: true, border: false, tools:'#tab_tools'">
+    </div>
+    <div id="tab_tools">
+        <a href="javascript:void(0)" class="easyui-menubutton" data-options="menu:'#tab_tools_menu',iconCls:'icon-redo', hasDownArrow: false"></a>
+    </div>
+    <div id="tab_tools_menu" class="easyui-menu" style="width:150px;">
+        <div data-options="name:'closeAll', iconCls:'icon-cancel'" class="close" name="closeAll">关闭所有标签页</div>
+        <div class="menu-sep"></div>
+    </div>
+    <div id="menu_tab_menu" class="easyui-menu" style="width:150px;">
+        <div data-options="name:'reload',iconCls:'icon-reload'" class="menu-reload">重新加载</div>
+        <div class="menu-sep"></div>
+        <div data-options="name:'close',iconCls:'icon-cancel'" class="close">关闭标签页</div>
+        <div data-options="name:'closeAll'" class="close">关闭所有标签页</div>
+        <div data-options="name:'closeOthers'" class="close">关闭其他标签页</div>
+    </div>
+</div>
+
+<div id="main_footer" data-options="region:'south', collapsedSize: 0" style="height:30px">
+    技术支持电话：025-84207500 @南大先腾有限公司
+</div>
