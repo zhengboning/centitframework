@@ -31,15 +31,15 @@
         <module name="framework-system" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="centit-ip" target="1.5" />
-      <module name="framework-base-view-easyui" target="1.5" />
-      <module name="framework-core" target="1.5" />
-      <module name="framework-hibernate" target="1.5" />
-      <module name="framework-parent" target="1.5" />
-      <module name="framework-staticsystem" target="1.5" />
-      <module name="framework-sys-view-easyui" target="1.5" />
-      <module name="framework-system" target="1.5" />
+    <bytecodeTargetLevel target="1.7">
+      <module name="centit-ip" target="1.7" />
+      <module name="framework-base-view-easyui" target="1.7" />
+      <module name="framework-core" target="1.7" />
+      <module name="framework-hibernate" target="1.7" />
+      <module name="framework-parent" target="1.7" />
+      <module name="framework-staticsystem" target="1.7" />
+      <module name="framework-sys-view-easyui" target="1.7" />
+      <module name="framework-system" target="1.7" />
     </bytecodeTargetLevel>
   </component>
 </project>
