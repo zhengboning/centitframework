@@ -32,8 +32,8 @@ public class DatabaseInfoManagerImpl extends BaseEntityManagerImpl<DatabaseInfo,
         return baseDao.connectionTest(databaseInfo);
     }
 
-    public List<Object> listDatabase() {
-        List<Object> database = baseDao.listDatabase();
+    public List<DatabaseInfo> listDatabase() {
+        List<DatabaseInfo> database = baseDao.listDatabase();
         return database;
     }
 

@@ -48,6 +48,7 @@ public class OsInfo implements EntityWithTimestamp, java.io.Serializable {
  
     @Column(name = "LAST_MODIFY_DATE")
     private Date lastModifyDate;
+    
     @Column(name = "CREATE_TIME")
     private Date createTime;
 

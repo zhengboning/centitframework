@@ -2,7 +2,7 @@
 <div class="easyui-panel search-body" cls="search">
 	<form>
 		<div class="search-item">
-			<label>系统业务Id</label>
+			<label>业务系统Id</label>
 			<input type="text" class="easyui-textbox" name="s_osId" />
 		</div>
 		
@@ -22,16 +22,13 @@
 	layoutH=".search">
 	<thead data-options="frozen:true">
 		<tr>
-			<th data-options="field:'osId'" width="15%" sortable="true">业务系统ID</th>
-			<th data-options="field:'osName'" width="15%" sortable="true">业务系统名称</th>
-			<th data-options="field:'hasInterface',formatter:function(value, rowData, rowIndex){
-			  	if(value==undefined)return '';
-			  	if(value=='T')return '是';
-			  	if(value=='F')return '否';
-			  }" width="15%" sortable="true" align="center">是否提供接口</th>
-			<th data-options="field:'interfaceUrl'" width="15%" sortable="true" align="center">接口URL</th>
-			<th data-options="field:'createTime'" width="15%" sortable="true" align="center">创建时间</th>
-			<th data-options="field:'created'" width="15%" sortable="true" align="center">创建人员</th>
+			<th data-options="field:'osId'" width="10%" sortable="true">业务系统ID</th>
+			<th data-options="field:'osName'" width="10%" sortable="true">业务系统名称</th>
+			<th data-options="field:'osUrl'" width="25%" sortable="true">业务系统URL</th>
+			<th data-options="field:'ddeSyncUrl'" width="25%" sortable="true">数据同步接口url</th>
+			<th data-options="field:'sysDataPushOption'" width="10%" sortable="true">推送数据选项</th>
+			<th data-options="field:'lastModifyDate'" width="10%" sortable="true" align="center">更新时间</th>
+			<th data-options="field:'created'" width="10%" sortable="true" align="center" format='User'>创建人员</th>
 		</tr>
 	</thead>
 	
@@ -42,7 +39,7 @@
 		target="dialog" rel="osinfo_add" title="新增业务系统" width="450" height="400" btnValue="添加">新增</a>
 		
 	<a iconCls="icon-edit" href="/modules/sys/osinfo/osinfo-info.html" trigger="single"
-		target="dialog" rel="osinfo_edit" title="编辑 {{osName}} 业务系统" width="320" height="420" btnValue="更新">编辑</a>
+		target="dialog" rel="osinfo_edit" title="编辑 {{osName}} 业务系统" width="450" height="420" btnValue="更新">编辑</a>
 		
 	<hr>
 	

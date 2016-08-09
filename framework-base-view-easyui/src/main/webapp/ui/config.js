@@ -273,7 +273,8 @@ define(function (require) {
 				
 			}
 			
-			if (302 == response.status) {
+			if (response.status == null || 401== response.status
+					 || 302 == response.status  || 0 == response.status) { //302
 				window.location.href = ContextPath+'system/mainframe/login';
 				return Promise.reject(response);
 			}

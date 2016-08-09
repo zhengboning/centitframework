@@ -512,10 +512,13 @@ public final class CodeRepositoryUtil {
      * @return
      */
     public static final List<IUserInfo> getSortedPrimaryUnitUsers(String unitCode) {
+        List<? extends IUserUnit> unitUsers = listUnitUsers(unitCode);
+        if (null == unitUsers) {
+            return null;
+        }
+        
         List<IUserInfo> users = new ArrayList<IUserInfo>();
-
-        IUnitInfo ui = getUnitRepo().get(unitCode);
-        for (IUserUnit uu : ui.getUnitUsers()) {
+        for (IUserUnit uu :unitUsers) {
             if (!CodeRepositoryUtil.T.equals(uu.getIsPrimary())) {
                 continue;
             }
@@ -548,13 +551,13 @@ public final class CodeRepositoryUtil {
      * @return
      */
     public static final List<IUserInfo> getSortedUnitUsers(String unitCode) {
-        List<IUserInfo> users = new ArrayList<IUserInfo>();
-
-        IUnitInfo ui = getUnitRepo().get(unitCode);
-        if (null == ui) {
+        List<? extends IUserUnit> unitUsers = listUnitUsers(unitCode);
+        if (null == unitUsers) {
             return null;
         }
-        for (IUserUnit uu : ui.getUnitUsers()) {
+ 
+        List<IUserInfo> users = new ArrayList<IUserInfo>();
+        for (IUserUnit uu :unitUsers) {
             IUserInfo user = getUserRepo().get(uu.getUserCode());
             if (user != null) {
                 if (CodeRepositoryUtil.T.equals(user.getIsValid())) {
@@ -1222,56 +1225,64 @@ public final class CodeRepositoryUtil {
      * @param unit
      * @return
      */
-    private static List<IUnitInfo> getSubUnits(IUnitInfo unit) {
-        List<IUnitInfo> units = new ArrayList<IUnitInfo>();
+    private static List<IUnitInfo> fetchSubUnits(List<? extends IUnitInfo> allunits,
+    		String parentUnitCode) {
+    	if(StringUtils.isBlank(parentUnitCode) || allunits==null)
+			return null;
+    	List<IUnitInfo> units = new ArrayList<IUnitInfo>();
+    	for (IUnitInfo uc : allunits) {
+    		if ( parentUnitCode.equals(uc.getParentUnit()) &&
+    				CodeRepositoryUtil.T.equals(uc.getIsValid())) {
+                        units.add(uc);
 
-        if (null == unit) {
-            return units;
-        }
-
-        units.add(unit);
-        List<? extends IUnitInfo> subUnits = unit.getSubUnits();
-
-        if (null != subUnits && subUnits.size() != 0) {
-            for (IUnitInfo uc : subUnits) {
-                IUnitInfo temp = getUnitRepo().get(uc.getUnitCode());
-                if (temp != null) {
-                    if (CodeRepositoryUtil.T.equals(temp.getIsValid())) {
-                        units.addAll(getSubUnits(temp));
-                    }
-                }
             }
-
         }
-
         return units;
     }
 
+    /**
+     * 获取机构的下级机构
+     *
+     * @param unitCode
+     * @return
+     */
+    public static final List<IUnitInfo> getSubUnits(String unitCode) {
+		
+    	List<? extends IUnitInfo> units = getPlatformEnvironment().listAllUnits();
+    	
+        return fetchSubUnits(units,unitCode);
+    }
     /**
      * 获取机构的下级机构，并按照树形排列
      *
      * @param unitCode
      * @return
      */
-    public static final List<IUnitInfo> getUnitList(String unitCode) {
-
-        if (StringUtils.isNotBlank(unitCode)) {
-            IUnitInfo ui = getUnitRepo().get(unitCode);
-            List<IUnitInfo> units = new ArrayList<IUnitInfo>();
-            if (null != ui) {
-                units.addAll(getSubUnits(ui));
+    public static final List<IUnitInfo> getAllSubUnits(String unitCode) {
+		if(StringUtils.isBlank(unitCode))
+			return null;
+		List<? extends IUnitInfo> allunits = getPlatformEnvironment().listAllUnits();
+		
+		List<IUnitInfo> units = new ArrayList<IUnitInfo>();		
+		List<IUnitInfo> subunits = fetchSubUnits(allunits,unitCode);
+		while( subunits!=null && subunits.size()>0){
+			units.addAll(subunits);
+			List<IUnitInfo> subunits1 = new ArrayList<IUnitInfo>();
+			for(IUnitInfo u1: subunits){
+				List<IUnitInfo> subunits2 = fetchSubUnits(allunits,u1.getUnitCode());
+				if(subunits!=null)
+					subunits1.addAll(subunits2);
+			}
+			subunits = subunits1;
+		}
+        
+        ParentChild<IUnitInfo> c = new ListOpt.ParentChild<IUnitInfo>() {
+            public boolean parentAndChild(IUnitInfo p, IUnitInfo c) {
+                return StringUtils.equals(p.getUnitCode(),c.getParentUnit());
             }
-            return units;
-        } else {
-        	List<IUnitInfo> units = getAllUnits(CodeRepositoryUtil.T);
-  	        ParentChild<IUnitInfo> c = new ListOpt.ParentChild<IUnitInfo>() {
-	            public boolean parentAndChild(IUnitInfo p, IUnitInfo c) {
-	                return StringUtils.equals(p.getUnitCode(),c.getParentUnit());
-	            }
-	        };	
-	        ListOpt.sortAsTree(units, c);
-	        return units;
-        }
+        };	
+        ListOpt.sortAsTree(units, c);
+        return units;     
     }
 
     // public static final List<FUnitinfo> getUnitList() {

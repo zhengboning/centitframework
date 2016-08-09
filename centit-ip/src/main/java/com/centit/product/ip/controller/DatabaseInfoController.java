@@ -63,6 +63,12 @@ public class DatabaseInfoController extends BaseController {
 
 
 
+	/**
+	 * 新增
+	 * @param databaseinfo
+	 * @param request
+	 * @param response
+	 */
     @RequestMapping(method = {RequestMethod.POST})
     public void saveDatabaseInfo(@Valid DatabaseInfo databaseinfo,HttpServletRequest request, HttpServletResponse response) {
     	
@@ -86,6 +92,12 @@ public class DatabaseInfoController extends BaseController {
         }     
         
     }
+    /**
+     * 编辑保存
+     * @param databaseCode
+     * @param databaseinfo
+     * @param response
+     */
     @RequestMapping(value = "/{databaseCode}", method = {RequestMethod.PUT})
     public void updateDatabaseInfo(@PathVariable String databaseCode, 
     		@Valid DatabaseInfo databaseinfo,HttpServletResponse response) {

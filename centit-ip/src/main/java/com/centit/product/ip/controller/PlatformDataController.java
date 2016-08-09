@@ -320,14 +320,14 @@ public class PlatformDataController extends BaseController {
 		JsonResultUtils.writeResponseDataAsJson(resData, response);			
 	}
 	
-	@RequestMapping(value = "/ipenvironmen/databaseinfo", 
+	@RequestMapping(value = "/ipenvironment/databaseinfo", 
 			method = RequestMethod.GET)
 	public void listAllDatabase(HttpServletResponse response) {
 		JsonResultUtils.writeSingleDataJson(
 				oatabaseInfoManager.listDatabase(),response);
 	}
 	
-	@RequestMapping(value = "/ipenvironmen/osinfo", 
+	@RequestMapping(value = "/ipenvironment/osinfo", 
 			method = RequestMethod.GET)
 	public void listAllOS(
 			HttpServletResponse response) {

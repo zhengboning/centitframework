@@ -99,8 +99,8 @@ public class DatabaseInfo implements EntityWithTimestamp, Serializable {
         return osId;
     }
 
-    public void setOsId(String sourceOsId) {
-        this.osId = sourceOsId;
+    public void setOsId(String osId) {
+        this.osId = osId;
     }
     public String getDatabaseCode() {
 		return databaseCode;

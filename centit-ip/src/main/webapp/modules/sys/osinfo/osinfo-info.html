@@ -11,33 +11,19 @@
 			required />
 		</div>
 	</div>
-	<div class="fields two">
-		
-		<div class="field">
-		<label>接口用户名</label>
-		<input type="text" class="easyui-textbox" name="osUser"
-			 />
+		<div class="field required">
+			<label>业务系统URL</label>
+			<input type="text" class="easyui-textbox" name="osUrl" />
 		</div>
-		<div class="field">
-		<label>接口密码加密</label>
-		<input type="text" class="easyui-textbox" name="osPassword"
-			 />
+		<div class="field required">
+		<label>数据同步接口url</label>
+		<input type="text" class="easyui-textbox" name="ddeSyncUrl"
+			required />
 		</div>
+	<div class="field required">
+		<label>推送数据选项</label>
+		<input type="text" class="easyui-textbox" name="sysDataPushOption" />
 	</div>
-	<div class="field">
-			<label>是否提供接口</label>
-			<div class="centit radio">
-			<input type="radio" name="hasInterface" value="T" />
-			<label>是</label>
-			
-			<input type="radio" name="hasInterface" value="F" />
-			<label>否</label>
-		</div>
-	</div>
-	<div class="field">
-		<label>业务系统接口url</label>
-		<input type="text" class="easyui-textbox" name="interfaceUrl"
-			 multiline="true" style="height: 60px;" />
-	</div>
+
 </form>
 </html>

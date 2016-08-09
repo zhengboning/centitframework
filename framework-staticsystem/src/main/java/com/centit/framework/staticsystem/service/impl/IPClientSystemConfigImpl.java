@@ -385,18 +385,18 @@ public class IPClientSystemConfigImpl implements StaticEnvironmentManager
 	}
 
 	@Override
-	@Cacheable(value="IPEnvironmen",key="'OsInfo'")
+	@Cacheable(value="IPEnvironment",key="'OsInfo'")
 	public List<OsInfo> listOsInfos() {
 		ResponseJSON resJson = RestfulHttpRequest.getResponseData(
-				platServerUrl + "/ipenvironmen/osinfo");
+				platServerUrl + "/ipenvironment/osinfo");
 		return resJson.getDataAsArray(OsInfo.class);
 	}
 
 	@Override
-	@Cacheable(value="IPEnvironmen",key="'DatabaseInfo'")
+	@Cacheable(value="IPEnvironment",key="'DatabaseInfo'")
 	public List<DatabaseInfo> listDatabaseInfo() {
 		ResponseJSON resJson = RestfulHttpRequest.getResponseData(
-				platServerUrl + "/ipenvironmen/databaseinfo");
+				platServerUrl + "/ipenvironment/databaseinfo");
 		return resJson.getDataAsArray(DatabaseInfo.class);
 	}
 

@@ -12,6 +12,6 @@
 	<cache name="UnitUsers" maxElementsInMemory="100000" timeToLiveSeconds="1800" eternal="false" overflowToDisk="false" />
 	<cache name="AllUserUnits" maxElementsInMemory="100000" timeToLiveSeconds="1800" eternal="false" overflowToDisk="false" />
 	<cache name="OptInfo" maxElementsInMemory="100000" timeToLiveSeconds="1800" eternal="false" overflowToDisk="false"  />
-	<cache name="IPEnvironmen" maxElementsInMemory="100000" timeToLiveSeconds="1800" eternal="false" overflowToDisk="false"  />
+	<cache name="IPEnvironment" maxElementsInMemory="100000" timeToLiveSeconds="1800" eternal="false" overflowToDisk="false"  />
 
 </ehcache>

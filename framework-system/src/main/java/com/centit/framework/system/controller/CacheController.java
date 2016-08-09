@@ -241,14 +241,21 @@ public class CacheController {
 
     /**
      * CP标签中UNITSLIST实现
-     * 获取所有符合状态标记的用户，
+     * 获取机构所有下级机构，
      *
      * @param unitcode 机构代码
      * @param response HttpServletResponse
      */
-    @RequestMapping(value = "/unitslist/{unitcode}", method = RequestMethod.GET)
-    public void unitslist(@PathVariable String unitcode, HttpServletResponse response) {
-        List<IUnitInfo> listObjects = CodeRepositoryUtil.getUnitList(unitcode);
+    @RequestMapping(value = "/subunits/{unitcode}", method = RequestMethod.GET)
+    public void getSubUnits(@PathVariable String unitcode, HttpServletResponse response) {
+        List<IUnitInfo> listObjects = CodeRepositoryUtil.getSubUnits(unitcode);
+
+        JsonResultUtils.writeSingleDataJson(listObjects, response);
+    }
+    
+    @RequestMapping(value = "/allsubunits/{unitcode}", method = RequestMethod.GET)
+    public void getAllSubUnits(@PathVariable String unitcode, HttpServletResponse response) {
+        List<IUnitInfo> listObjects = CodeRepositoryUtil.getAllSubUnits(unitcode);
 
         JsonResultUtils.writeSingleDataJson(listObjects, response);
     }

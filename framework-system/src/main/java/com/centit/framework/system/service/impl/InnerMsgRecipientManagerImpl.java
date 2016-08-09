@@ -130,7 +130,7 @@ public class InnerMsgRecipientManagerImpl
     @Override
     @Transactional
     public void noticeByUnitCode(String unitCode, InnerMsg msg) throws Exception {
-        List<IUnitInfo> unitList= CodeRepositoryUtil.getUnitList(unitCode);
+        List<IUnitInfo> unitList= CodeRepositoryUtil.getSubUnits(unitCode);
         		//(ArrayList<UnitInfo>) unitDao.listAllSubUnits(unitCode);
         String units="";
         int i=0;

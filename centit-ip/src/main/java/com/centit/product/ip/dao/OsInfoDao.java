@@ -2,12 +2,11 @@ package com.centit.product.ip.dao;
 
 import java.util.HashMap;
 import java.util.Map;
-
 import org.springframework.stereotype.Repository;
-
 import com.centit.framework.core.dao.CodeBook;
 import com.centit.framework.hibernate.dao.BaseDaoImpl;
 import com.centit.product.ip.po.OsInfo;
+
 @Repository
 public class OsInfoDao extends BaseDaoImpl<OsInfo,String> {
 

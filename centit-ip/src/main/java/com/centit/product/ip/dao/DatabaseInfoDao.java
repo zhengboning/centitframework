@@ -50,9 +50,8 @@ public class DatabaseInfoDao extends BaseDaoImpl<DatabaseInfo,String> {
                 databaseInfo.getPassword()));
     }
     
-	@SuppressWarnings("unchecked")
-	public List<Object> listDatabase() {
-        return (List<Object>) DatabaseOptUtils.findObjectsByHql(this,"select t.databaseName from DatabaseInfo t");
+	public List<DatabaseInfo> listDatabase() {
+        return this.listObjects();
     }
 
 	public DatabaseInfo getDatabaseInfoById(String databaseCode) {

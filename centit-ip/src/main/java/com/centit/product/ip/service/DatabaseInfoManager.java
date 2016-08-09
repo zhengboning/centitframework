@@ -10,7 +10,7 @@ import com.centit.product.ip.po.DatabaseInfo;
 public interface DatabaseInfoManager extends BaseEntityManager<DatabaseInfo,String> {
     public boolean connectionTest(DatabaseInfo databaseInfo);
 
-    public List<Object> listDatabase();
+    public List<DatabaseInfo> listDatabase();
     
     public Serializable saveNewObject(DatabaseInfo databaseInfo);
     
